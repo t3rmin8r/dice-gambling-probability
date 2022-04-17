@@ -24,13 +24,16 @@ class Hand:
 
     def analyze_table(self):
         die_picked_up = 0
+        hold = []
 
         # Grab all the threes
         for dice in self.rollable_die:
             print(f"Could grab: {dice}")
             if dice.value == 3:
-                self.grab_dice(dice)
+                hold.append(dice)
                 die_picked_up += 1
+        for dice in hold:
+            self.grab_dice(dice)
 
         if die_picked_up > 0:
             pass
