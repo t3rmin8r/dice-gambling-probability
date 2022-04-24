@@ -1,3 +1,4 @@
+from random import random
 from dice import Dice
 
 class Hand:
@@ -17,7 +18,7 @@ class Hand:
         )
 
     def generate(self):
-        self.rollable_die = [Dice() for _ in range(6)]
+        self.rollable_die = [Dice() for _ in range(5)]
 
     def roll(self):
 
