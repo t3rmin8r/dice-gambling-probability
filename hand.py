@@ -18,7 +18,7 @@ class Hand:
         )
 
     def generate(self):
-        self.rollable_die = [Dice() for _ in range(5)]
+        self.rollable_die = [Dice() for _ in range(6)]
 
     def roll(self):
 
