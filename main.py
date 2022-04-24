@@ -1,11 +1,10 @@
-from dice import Dice
-from hand import Hand
+from game import Game
 
-h1 = Hand()
-h1.generate()
+def main():
+    game = Game(4)
+    
+    game.play_rounds(100)
+    game.view_scorecard()
 
-print(h1)
-h1.roll()
-print(h1)
-h1.analyze_table()
-print(h1)
+if __name__ == '__main__':
+    main()
