@@ -4,7 +4,6 @@ class Game:
     def __init__(self, player_count: int):
         self.player_count = player_count
         self.players = [Hand(x) for x in range(self.player_count)]
-#        for player in self.players:
         self.scorecard = self.generate_scorecard()
 
     def generate_scorecard(self):
