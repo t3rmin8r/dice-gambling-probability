@@ -1,4 +1,3 @@
-from random import random
 from dice import Dice
 
 class Hand:
