@@ -1,7 +1,5 @@
 from game import Game
-from test import test_diversity
 
-test_diversity()
 
 def main():
     game = Game(4)
