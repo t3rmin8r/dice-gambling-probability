@@ -4,8 +4,6 @@ class Game:
     def __init__(self, player_count: int):
         self.player_count = player_count
         self.players = [Hand(x) for x in range(self.player_count)]
-        for player in self.players:
-            player.generate()
         self.scorecard = self.generate_scorecard()
 
     def generate_scorecard(self):
@@ -29,7 +27,7 @@ class Game:
             print(player)
 
     def view_players(self):
-        if len(self.players) > 0: 
+        if len(self.players) > 0:
             for player in self.players:
                 print(player)
         else:
@@ -37,6 +35,7 @@ class Game:
 
     def play_round(self):
         for player in self.players:
+            player.generate()
             player.play_round()
 
         winners = self.get_winner()
@@ -55,9 +54,9 @@ class Game:
                 lowest_scorer = player
             if player < lowest_scorer:
                 lowest_scorer = player
-        
+
         winners.append(lowest_scorer)
-        
+
         # Check for ties
         for player in self.players:
             if player == lowest_scorer:
