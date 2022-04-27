@@ -21,4 +21,4 @@ check-format: ## Check Python code formatting
 
 format: ## Format Python code
 	pipenv run black .
-	pipenv run reorder-python-imports --py39-plus `find sleuth -name "*.py"` || pipenv run black .
+	pipenv run reorder-python-imports --py39-plus `find . -name "*.py"` || pipenv run black .
