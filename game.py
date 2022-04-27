@@ -1,5 +1,6 @@
 from hand import Hand
 
+
 class Game:
     def __init__(self, player_count: int):
         self.player_count = player_count
@@ -10,17 +11,17 @@ class Game:
         scorecard = {}
         for player in self.players:
             scorecard[player.uid] = {
-                    'wins': 0,
-                    'ties': 0,
+                "wins": 0,
+                "ties": 0,
             }
         return scorecard
 
     def record_score(self, winners):
         if isinstance(winners, list):
             for player in winners:
-                self.scorecard[player.uid]['ties'] += 1
+                self.scorecard[player.uid]["ties"] += 1
         else:
-            self.scorecard[winners.uid]['wins'] += 1
+            self.scorecard[winners.uid]["wins"] += 1
 
     def view_scorecard(self):
         for player in self.scorecard.items():
