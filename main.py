@@ -6,5 +6,6 @@ def main():
     game.play_rounds(100)
     game.view_scorecard()
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()

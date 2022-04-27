@@ -1,5 +1,6 @@
 from dice import Dice
 
+
 class Hand:
     def __init__(self, uid):
         self.uid = uid
@@ -49,12 +50,11 @@ class Hand:
                     lowest = dice
             self.grab_dice(lowest)
             self.total += lowest.value
-        
 
     def grab_dice(self, dice):
         self.holding_die.append(dice)
-        for index, d in enumerate(self.rollable_die):
-            if d.value == dice.value:
+        for index, die in enumerate(self.rollable_die):
+            if die.value == dice.value:
                 self.rollable_die.pop(index)
                 break
 
@@ -66,8 +66,7 @@ class Hand:
     def __eq__(self, hand: object) -> bool:
         if self.uid != hand.uid:
             return self.total == hand.total
-        else:
-            return False
+        return False
 
     def __lt__(self, hand: object) -> bool:
         return self.total < hand.total
