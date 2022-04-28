@@ -1,7 +1,7 @@
 from dice import Dice
 
 
-class Hand:
+class Player:
     def __init__(self, uid):
         self.uid = uid
         self.total = 0
@@ -63,13 +63,13 @@ class Hand:
             self.roll()
             self.analyze_table()
 
-    def __eq__(self, hand: object) -> bool:
-        if self.uid != hand.uid:
-            return self.total == hand.total
+    def __eq__(self, player: object) -> bool:
+        if self.uid != player.uid:
+            return self.total == player.total
         return False
 
-    def __lt__(self, hand: object) -> bool:
-        return self.total < hand.total
+    def __lt__(self, player: object) -> bool:
+        return self.total < player.total
 
-    def __gt__(self, hand: object) -> bool:
-        return self.total > hand.total
+    def __gt__(self, player: object) -> bool:
+        return self.total > player.total

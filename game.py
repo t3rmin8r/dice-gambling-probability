@@ -1,10 +1,10 @@
-from hand import Hand
+from player import Player
 
 
 class Game:
     def __init__(self, player_count: int):
         self.player_count = player_count
-        self.players = [Hand(x) for x in range(self.player_count)]
+        self.players = [Player(x) for x in range(self.player_count)]
         self.scorecard = self.generate_scorecard()
 
     def generate_scorecard(self):
@@ -46,7 +46,7 @@ class Game:
         for _ in range(count):
             self.play_round()
 
-    def get_winner(self) -> list or Hand:
+    def get_winner(self) -> list or Player:
         lowest_scorer = None
         winners = []
 
