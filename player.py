@@ -2,11 +2,12 @@ from dice import Dice
 
 
 class Player:
-    def __init__(self, uid):
+    def __init__(self, uid, acceptable_die: list = []):
         self.uid = uid
         self.total = 0
         self.rollable_die = []
         self.holding_die = []
+        self.acceptable_die = acceptable_die
 
     def __repr__(self) -> str:
         return (
@@ -32,7 +33,7 @@ class Player:
 
         # Grab all the threes
         for dice in self.rollable_die:
-            if dice.value == 3:
+            if dice.value == 3 or dice.value in self.acceptable_die:
                 hold.append(dice)
                 die_picked_up += 1
         for dice in hold:

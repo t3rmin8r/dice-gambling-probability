@@ -2,10 +2,13 @@ from player import Player
 
 
 class Game:
-    def __init__(self, player_count: int):
+    def __init__(self, player_count: int, strategies: list = []):
         self.player_count = player_count
         self.players = [Player(x) for x in range(self.player_count)]
         self.scorecard = self.generate_scorecard()
+        self.strategies = strategies
+        if self.strategies:
+            self.assign_strategies()
 
     def generate_scorecard(self):
         scorecard = {}
@@ -15,6 +18,13 @@ class Game:
                 "ties": 0,
             }
         return scorecard
+
+    def assign_strategies(self):
+        if len(self.strategies) > self.player_count:
+            strategies = self.strategies[:self.player_count]
+        
+        for index, player in enumerate(self.players):
+            player.acceptable_die = self.strategies[index]
 
     def record_score(self, winners):
         if isinstance(winners, list):
