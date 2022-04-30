@@ -63,6 +63,7 @@ class Player:
         while len(self.rollable_die) > 0:
             self.roll()
             self.analyze_table()
+        self.holding_die = []
 
     def __eq__(self, player: object) -> bool:
         if self.uid != player.uid:
