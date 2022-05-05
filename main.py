@@ -3,7 +3,7 @@ from player import Player
 
 def main():
     game = Game(
-        player_count=4,
+        player_count=5,
         strategies=[
             [1],
             [1],
