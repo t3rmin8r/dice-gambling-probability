@@ -19,7 +19,7 @@ class Player:
         )
 
     def generate(self):
-        self.rollable_die = [Dice() for _ in range(6)]
+        self.rollable_die = [Dice() for _ in range(5)]
 
     def roll(self):
 
